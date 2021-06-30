@@ -5,3 +5,20 @@ import '../styles/main.scss';
 
 // \/ All of your javascript should go here \/
 
+const prom = new Promise((resolve, reject) => {
+setTimeout(() => {
+     resolve("Success")
+}, 6000)
+});
+
+prom.then((showModal) => {
+    const modalElement = document.querySelector(".modal");
+    modalElement.style.display = "initial";
+
+    const close = document.querySelector(".close");
+    close.addEventListener("click", (e) => {
+        const closeBtn = e.target;
+        closeBtn.parentElement.style.display = "none";
+        modalElement.style.backgroundColor ="initial";
+    })
+})
